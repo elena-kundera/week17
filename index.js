@@ -77,6 +77,31 @@ random.onclick = function () {
 
 //2. Сделайте интерфейс для анонимных комментариев со спамфильтром.
 
+const message = document.querySelector('#messageInput');
+const sendBtn = document.querySelector('#sendComment');
+const messageOut = document.querySelector('#messageContainer');
+
+sendBtn.onclick = function () {
+    const messageIn = message.value;
+    
+    if (messageIn.includes('viagra')){
+            const messageCorrected = messageIn.replace(/viagra/ig, '***');
+            messageOut.innerHTML = messageCorrected;
+        }
+        else if (messageIn.includes('xxx')){
+            const messageCorrected1 = messageIn.replace(/xxx/ig, '***');
+            messageOut.innerHTML = messageCorrected1;
+        }
+        else {
+            messageOut.innerHTML = messageIn;
+        }
+        }
+
+
+
+
+
+
 // 3. Напишите функцию `formatDate(date)`, форматирующую `date` по следующему принципу: 
 //     - Если спустя `date` прошло менее 1 секунды, вывести `"прямо сейчас"`.
 //     - В противном случае, если с `date` прошло меньше 1 минуты, вывести `"n сек. 
@@ -108,5 +133,6 @@ else {
 }
 }
 
+//наверное так, но что-то даты мне пока меньше всего нравятся 
 
 
